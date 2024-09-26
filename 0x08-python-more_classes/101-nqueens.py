@@ -15,10 +15,12 @@ def solve(board, N):
             if solve(board, N + 1):
                 return True
 
-            # if the solution placing this queen doesn't lead to a solution, remove it
+            # if the solution placing this queen doesn't
+            # lead to a solution, remove it
             board[N - 1] = -1
 
     return False
+
 
 def is_safe(board, N, col):
     # check if there is a queen in the same column
@@ -28,6 +30,7 @@ def is_safe(board, N, col):
 
     return True
 
+
 def print_solution(board, N):
     for i in range(N):
         for j in range(N):
@@ -36,6 +39,7 @@ def print_solution(board, N):
             else:
                 print(".", end=" ")
         print()
+
 
 def main():
     if len(sys.argv) != 2:
@@ -55,6 +59,7 @@ def main():
         sys.exit(1)
 
     print_solution(board, N)
+
 
 if __name__ == "__main__":
     main()
